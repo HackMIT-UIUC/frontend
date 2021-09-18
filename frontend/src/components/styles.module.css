@@ -1,0 +1,17 @@
+.contentTopPart{
+ width: 80vw;
+ height: 20%;
+ display:grid;
+ font-size: 5rem;
+ grid-template-columns: 25% 30% 25% 20%;
+ align-items:center;
+ justify-items:center
+}
+
+.mainContainer{
+    height:100%;
+    width:80vw;
+    align:center;
+    display:grid;
+    grid-template-rows: 15% 60% 25%;
+}
