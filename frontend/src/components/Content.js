@@ -1,20 +1,49 @@
-import React from 'react'
-import {Container,Text} from 'atomize'
+import React, {useState} from 'react'
+import {Container,Text,Button,Icon} from 'atomize'
 import PostCard from './PostCard'
+import NewPostCard from './NewPostCards'
 import Search from './Search'
 import classes from './styles.module.css'
+import CreateModal from './CreateModal'
 function Content() {
+    const [modalOpen, toggleModal] = useState(false);
     return (
-        <Container rounded = "0.25rem" m = "1rem 0 0 0" d="flex" flexDir = "column" align = "center" justify="center" bg = "white" w = "80vw" h = "65vh">
+        <div className = {classes.contentContainer}>
             <div className = {classes.mainContainer}>
                 <div className  = {classes.contentTopPart}>
-                    <Text m = "0.25rem">Join the Discussion</Text>
+                    <div className = {classes.sideHeader}>Join the Discussion</div>
                     <div></div>
                     <Search/>
-                    <Text>New Post</Text>
+                    <Button
+                        maxW = "15vw"
+                        h = "4.3vh"
+                        suffix={
+                        <Icon
+                            name="Add"
+                            size="1.5vw"
+                            color="white"
+                            m={{ l: "1rem" }}
+                        />
+                        }
+                        shadow="3"
+                        hoverShadow="4"
+                        m={{ r: "1rem" }}
+                        onClick = {()=>toggleModal(true)}
+                    >
+                        
+                        Create Post
+                    </Button>
+                </div>
+                <div className = {classes.cardWrapper}>
+                <PostCard/><PostCard/><PostCard/><PostCard/>
+                </div>
+                <div className = {classes.newPostsSection}>
+                    <div className = {classes.newPostsHeader}>New Posts</div>
+                    <div className = {classes.newPostsContainer}><NewPostCard/> <NewPostCard/> <NewPostCard/> <NewPostCard/></div>
                 </div>
             </div>
-        </Container>
+            <CreateModal isOpen = {modalOpen} onClose = {()=>toggleModal(false)}/>
+        </div>
     )
 }
 

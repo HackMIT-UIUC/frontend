@@ -1,15 +1,85 @@
 import React from 'react'
-import {Row,Col,Text} from 'atomize'
+import {Row,Col,Text,Button,Icon} from 'atomize'
+import classes from './styles.module.css'
 function Navbar() {
     return (
-        <Row pos = 'fixed' top = '1rem' d = "flex" flexDir = "row" w = "100vw" justifyItems="center">
-            <Col size = "9"/>
-            <Col><Text fontFamily="main" textSize= "2.6vw" >Forum</Text></Col>
-            <Col><Text fontFamily="main" textSize="2.6vw" >About</Text></Col>
-            <Col><Text fontFamily="main" textSize="2.6vw">Signup</Text></Col>
-            <Col><Text fontFamily="main" textSize="2.6vw" >Logo</Text></Col>
-            <Col><Text fontFamily="main" textSize="2.6vw" >Login</Text></Col>
-        </Row>
+        <div className = {classes.navbar} top = '1rem' d = "flex" flexDir = "row" w = "100vw" justifyItems="center">
+            <div/>
+            <Button
+                h = "5vh"
+                w = "6vw"
+                prefix={
+                <Icon
+                    name="History"
+                    size="16px"
+                    color="white"
+                />
+                }
+                bg={"accent"}
+                hoverBg="warning800"
+                rounded="circle"
+                shadow="3"
+                hoverShadow="4"
+            >
+            Forum
+            </Button>
+
+            <Button
+                h = "5vh"
+                w = "6vw"
+                prefix={
+                <Icon
+                    name="InfoSolid"
+                    size="16px"
+                    color="white"
+                />
+                }
+                bg={"accent"}
+                hoverBg="warning800"
+                rounded="circle"
+                shadow="3"
+                hoverShadow="4"
+            >
+                About
+            </Button>
+            
+            <Button
+                h = "5vh"
+                w = "6vw"
+                prefix={
+                <Icon
+                    name="UserSolid"
+                    size="16px"
+                    color="white"
+                />
+                }
+                bg={"accent"}
+                hoverBg="warning800"
+                rounded="circle"
+                shadow="3"
+                hoverShadow="4"
+            >
+                Signup
+            </Button>
+            <Button
+                h = "5vh"
+                w = "6vw"
+                prefix={
+                <Icon
+                    name="LongRight"
+                    size="16px"
+                    color="white"
+                />
+                }
+                bg={"accent"}
+                hoverBg="warning800"
+                rounded="circle"
+                shadow="3"
+                hoverShadow="4"
+            >
+                Login
+            </Button>
+        </div>
     )
 }
 

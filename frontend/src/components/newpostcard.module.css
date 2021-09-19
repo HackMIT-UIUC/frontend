@@ -1,0 +1,31 @@
+.cardContainer{
+    width:20vw;
+    align-self:center;
+    justify-self: center;
+    height: 100%;
+    display:grid;
+    margin-right:3.5vw;
+    grid-template-rows: 17.5% 15% 30% 12.5% 20%;
+}
+
+
+.newPostCardTextHeader{
+    font-size:0.75rem;
+    padding-top:1vh;
+}
+
+.newPostCardText{
+    font-size:0.5rem;
+}
+.iconWrapper{
+    display:grid;
+    width:15vw;
+    grid-template-columns: 15% 70% 15% ;
+    justify-items:center;
+    align-items:center;
+}
+
+.solidSeperator{
+    border-top:1px solid black;
+    width:75%;
+}
