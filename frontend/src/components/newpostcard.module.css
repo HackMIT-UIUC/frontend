@@ -12,9 +12,13 @@
 .newPostCardTextHeader{
     font-size:0.75rem;
     padding-top:1vh;
+    padding-bottom:0.5vh;
 }
 
 .newPostCardText{
+    font-size:0.4rem;
+}
+.newPostCardSub{
     font-size:0.5rem;
 }
 .iconWrapper{

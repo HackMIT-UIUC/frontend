@@ -4,9 +4,9 @@ import classes from './newpostcard.module.css'
 function NewPostCard({title,caption,picture,id,views,likes}) {
     return (
             <div className = {classes.cardContainer}>
-                <div className = {classes.newPostCardTextHeader}>Title</div>
-                <div className = {classes.newPostCardText}>Category</div>
-                <div className = {classes.newPostCardText}>Description...</div>
+                <div className = {classes.newPostCardTextHeader}>{title}</div>
+                <div className = {classes.newPostCardSub}>Category</div>
+                <div className = {classes.newPostCardText}>{caption}</div>
                 <div className = {classes.solidSeperator}/>
                 <div className = {classes.iconWrapper}>
                     <div className = {classes.centering}><Icon name="Message" color = "black" size="1.5vw"/></div>

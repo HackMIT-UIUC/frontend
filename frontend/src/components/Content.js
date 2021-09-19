@@ -5,6 +5,8 @@ import NewPostCard from './NewPostCards'
 import Search from './Search'
 import classes from './styles.module.css'
 import CreateModal from './CreateModal'
+import { PostCategories } from './PostCategories'
+import { PostContents } from './PostCategories'
 function Content() {
     const [modalOpen, toggleModal] = useState(false);
     return (
@@ -35,11 +37,18 @@ function Content() {
                     </Button>
                 </div>
                 <div className = {classes.cardWrapper}>
-                <PostCard/><PostCard/><PostCard/><PostCard/>
+                    {PostCategories.map((item, index)=>{
+                        return(
+                         <PostCard title = {item.title} caption = {item.caption} id = {item.id} views = {item.views} likes = {item.likes} image = {item.img}/>)
+                    })}
                 </div>
                 <div className = {classes.newPostsSection}>
                     <div className = {classes.newPostsHeader}>New Posts</div>
-                    <div className = {classes.newPostsContainer}><NewPostCard/> <NewPostCard/> <NewPostCard/> <NewPostCard/></div>
+                    <div className = {classes.newPostsContainer}> {PostContents.map((item, index)=>{
+                        return(
+                         <NewPostCard title = {item.title} caption = {item.caption} id = {item.id} views = {item.views} likes = {item.likes} image = {item.img}/>)
+                    })}
+                    </div>
                 </div>
             </div>
             <CreateModal isOpen = {modalOpen} onClose = {()=>toggleModal(false)}/>

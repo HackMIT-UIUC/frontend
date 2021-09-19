@@ -1,15 +1,14 @@
-import { Dropdown, Anchor,Div } from "atomize";
+import { Dropdown, Anchor,Div,Text,Button} from "atomize";
 import React,{useState, useEffect} from 'react'
 const SmallSizeDropdown = ()=> {
-    
+    const [currentCategory,setCurrentCategory] = useState("General Issues");
     const [showDropdown, toggleDropdown] = useState(false)
-    const [currentCategory,changeCategory] = useState("General Issues")
     const menuList = (
         <Div p={{ x: "1rem", y: "0.5rem" }}>
           {["Senior Health", "Child Health", "Injury and Accidents", "Women's Health", "Mental Health","General Issues"].map((name, index) => (
-            <Anchor onClick = {(name)=>{changeCategory(name)}} d="block" p={{ y: "0.25rem" }}>
+            <p onClick = {()=>{setCurrentCategory(name); toggleDropdown(false)}} d="block" p={{ y: "0.25rem" }}>
               {name}
-            </Anchor>
+            </p>
           ))}
         </Div>
       );
@@ -22,7 +21,7 @@ const SmallSizeDropdown = ()=> {
         }
         menu={menuList}
       >
-          {currentCategory}
+         {currentCategory}
       </Dropdown>
     );
   }
